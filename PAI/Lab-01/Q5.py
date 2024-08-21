@@ -1,5 +1,4 @@
 int_list = []
-count=0
 size = int(input("Enter the size of the list: "))
 
 for i in range(size):
@@ -7,12 +6,9 @@ for i in range(size):
 
 number = int(input("Enter the special number: "))
 
-for j in range(size):
-    if int_list[j-1]<number:
-        del int_list[j-1]
+newList = [j for j in int_list if number<=j]
 
-print("Updated list: ")
-for k in int_list:
-    print("\n", k)
+print("Updated list: ", newList)
+
 
 
