@@ -5,7 +5,7 @@ operation = input("Operation: ")
 match operation:
 
     case '+':
-        print("Result: ", n1+n2)
+        print("Result: ", -1*(-n1-n2))
 
     case '-':
         print("Result: ", n1-n2)
