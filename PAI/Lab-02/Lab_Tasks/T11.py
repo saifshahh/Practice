@@ -28,7 +28,7 @@ Stud= {}
 num = int(input('Enter the number of students: '))
 
 for i in range(num):
-    name = input('Enter the name: ')
+    name = input(f'Enter the name of student {i + 1}: ')
     grades = []
     Num = int(input(f"Enter the number of grades for {name}: "))
     
