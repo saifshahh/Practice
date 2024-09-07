@@ -15,7 +15,7 @@ for i in range(len(l1)):
     dict[l1[i]] = l2[i]
 
 try:
-    with open(r'E:\Programming\Lab-03\file2.txt', 'w') as fileObj:
-       fileObj.write(str(dict))
+    with open(r'E:\Programming\Lab-03\file2.txt', 'w') as f:
+       f.write(str(dict))
 except Exception as e:
     print(str(e))
