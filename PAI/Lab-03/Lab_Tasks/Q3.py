@@ -6,11 +6,9 @@ dict = {}
 print('Input for list 1: ')
 for i in range(num):
     l1.append(int(input('Enter the number: ')))
-
 print('Input for list 2: ')
 for i in range(num):
     l2.append(int(input('Enter the number: ')))
-
 for i in range(len(l1)):
     dict[l1[i]] = l2[i]
 
