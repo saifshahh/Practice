@@ -128,6 +128,19 @@ class LinkedList{
         return count;
     }
     
+    void reverse(){
+        Node *current = head;
+        Node *last = nullptr;
+        
+        while(current!=NULL){
+            Node *Next = current->next;
+            current->next = last;
+            last = current;
+            current = Next;
+        }
+        head = last;
+    }
+    
     void Display(){
         Node *temp = head;
         while(temp!=NULL){
@@ -171,5 +184,9 @@ int main(){
     l1.Display();
     
     cout<<"\nThe total number of Nodes is "<<l1.count()<<".";
+    
+    cout<<endl;
+    l1.reverse();
+    l1.Display();
 
 }
