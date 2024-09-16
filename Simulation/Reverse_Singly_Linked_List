@@ -1,0 +1,12 @@
+void reverse(){
+        Node *current = head;
+        Node *last = nullptr;
+        
+        while(current!=NULL){
+            Node *Next = current->next;
+            current->next = last;
+            last = current;
+            current = Next;
+        }
+        head = last;
+    }
