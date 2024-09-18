@@ -9,7 +9,7 @@ class Account:
         self.__security_code = security_code
     
     def info(self):
-        print(f"Account No: {self.__account_no} is having {self.__account_bal} dollars. The security code of this account is {self.__security_code}")
+        print(f"Account Number: {self.__account_no}\nBalance: {self.__account_bal} dollars\nSecurity Code: {self.__security_code}")
     
 acc = Account(111,3000,'0032')
 acc.info()
