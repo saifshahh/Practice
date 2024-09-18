@@ -11,5 +11,5 @@ class Account:
     def info(self):
         print(f"Account No: {self.__account_no} is having {self.__account_bal} dollars. The security code of this account is {self.__security_code}")
     
-acc = Account(123,5000,'0012')
+acc = Account(111,3000,'0032')
 acc.info()
