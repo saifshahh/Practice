@@ -1,4 +1,4 @@
-int interpolationSearch(int arr[], int n, int x){
+int interpolationSearch(int arr[], int n, int k){
   int low = 0;
   int high = arr.size() - 1;
   
