@@ -15,22 +15,32 @@ class Queue{
         rear = -1;
         arr = new int[size];
     }
+    
+    ~Queue(){
+        delete[] arr;
+    }
 };
 
 bool isFull(Queue *q){
-    if (q->rear == q->size - 1) return true;
-    return false;
+    // if (q->rear == q->size - 1) return true;
+    // return false; 
+    // We need to check for circular condition to fix the problem when we enqueue after dequeing
+    return (q->rear+1) % (q->size) == q->front;
 }
 
 bool isEmpty(Queue *q){
-    if (q->rear == q->front) return true;
-    return false;
+    // if (q->rear == q->front) return true;
+    // return false;
+    return q->front == -1;
 }
 
 void EnQueue(Queue *q, int value){
     if(isFull(q)) cout << "Queue Overflow." << endl;
     else{
-        q->rear++;
+        // q->rear++;
+        // q->arr[q->rear] = value;
+        if(isEmpty(q)) q->front = 0;
+        q->rear = (q->rear + 1) % q->size;
         q->arr[q->rear] = value;
     }
 }
@@ -38,13 +48,22 @@ void EnQueue(Queue *q, int value){
 void DeQueue(Queue *q){
     if(isEmpty(q)) cout << "Queue Underflow." << endl;
     else{
-        q->front++;
-        q->size--;
+        // q->front++;
+        if(q->front == q->rear){ 
+            q->front = -1;
+            q->rear = -1;
+        } 
+        else q->front = (q->front + 1) % q->size;
     }
 }
 
 void traversal(Queue *q){
-    for(int i = q->front+1; i <= q->rear; i++) cout << q->arr[i] << "->"; 
+    int i = q->front;
+    while (true) {
+        cout<<q->arr[i]<<"->";
+        if(i == q->rear) break;
+        i = (i+1) % q->size; 
+    }
     cout<<"End"<<endl;
 }
 
