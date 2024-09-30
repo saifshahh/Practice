@@ -27,11 +27,11 @@ bool isEmpty(Queue *q){
     return false;
 }
 
-void EnQueue(Queue *q, int val){
+void EnQueue(Queue *q, int value){
     if(isFull(q)) cout << "Queue Overflow." << endl;
     else{
         q->rear++;
-        q->arr[q->rear] = val;
+        q->arr[q->rear] = value;
     }
 }
 
