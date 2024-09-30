@@ -21,11 +21,11 @@ bool isFull(Stack* s){
     return false;
 }
 
-void push(Stack* s,int val){
-    if(isFull(s)) cout<<"Stack is full";
+void push(Stack* s, int value){
+    if(isFull(s)) cout<<"Stack Overflow\n";
     else{
         s->Top++;
-        s->arr[s->Top] = val;
+        s->arr[s->Top] = value;
     }
 }
 
