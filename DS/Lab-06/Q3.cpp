@@ -80,3 +80,84 @@ int main(){
     EnQueue(q1, 5);
     traversal(q1);
 }
+
+
+
+// Queue : Linked List Implementation
+#include<iostream>
+using namespace std;
+
+class Queue{
+public:
+    int data;
+    Queue* next;
+};
+
+Queue* front = NULL;
+Queue* rear = NULL;
+
+void traverse(Queue *q){
+    while(q != nullptr){
+        cout << q->data << "->";
+        q = q->next;
+    }
+    cout<<"End"<<endl;
+}
+
+void EnQueue(int value){
+    Queue* q = new Queue();
+    if(q == nullptr) cout<<"Queue Overflow."<<endl;
+    else{
+        q->data = value;
+        q->next = nullptr;
+        if(rear == nullptr){
+            front = q;
+            rear = q;
+        }
+        else{
+            rear->next = q;
+            rear = q;
+        }
+    }
+}
+
+void DeQueue(){
+    Queue* q = front;
+    if(front == nullptr) cout<<"Queue Underflow."<<endl;
+    else{
+        front = front->next;
+        delete(q);
+    }
+}
+
+int main(){
+
+    cout<<"10 Passengers entered the Queue: \n";
+    EnQueue(1);
+    EnQueue(2);
+    EnQueue(3);
+    EnQueue(4);
+    EnQueue(5);
+    EnQueue(6);
+    EnQueue(7);
+    EnQueue(8);
+    EnQueue(9);
+    EnQueue(10);
+    traverse(front);
+
+    cout<<"5 Passengers left the Queue: \n";
+    DeQueue();
+    DeQueue();
+    DeQueue();
+    DeQueue();
+    DeQueue();
+    traverse(front);
+
+    cout<<"5 Passengers entered the Queue: \n";
+    EnQueue(1);
+    EnQueue(2);
+    EnQueue(3);
+    EnQueue(4);
+    EnQueue(5);
+    traverse(front);
+}
