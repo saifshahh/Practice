@@ -36,7 +36,6 @@ void EnQueue(Queue *q, int val){
 }
 
 void DeQueue(Queue *q){
-    int value = -1;
     if(isEmpty(q)) cout << "Queue Underflow." << endl;
     else{
         q->front++;
