@@ -34,7 +34,7 @@ public:
     int front(){
         if(s2.empty()){
             if(s1.empty()) {
-                cerr << "Queue is empty!" << endl;
+                cout << "Queue is empty!" << endl;
                 exit(0);
             }
             while(!s1.empty()){
@@ -60,4 +60,3 @@ int main(){
     cout << "Dequeued: " << q1.DeQueue() << endl; 
     cout << "Dequeued: " << q1.DeQueue() << endl; 
 }
-
