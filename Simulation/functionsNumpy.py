@@ -67,10 +67,28 @@ print(stir(a))
 # c = np.mod(a,b)
 # print(c)
 
+# import numpy as np
+
+# a = np.array([1,2,3,4])
+# b = np.array([1,2,3,4])
+
+# c = np.divmod(a,b)
+# print(c)
+
+# import numpy as np
+
+# a = np.array([1,-2,-3,4])
+# c = np.absolute(a)
+# print(c)
+
+# import numpy as np
+
+# a = np.array([1,-2.3,-3.5,4.87])
+# c = np.trunc(a)
+# print(c)
+
 import numpy as np
 
-a = np.array([1,2,3,4])
-b = np.array([1,2,3,4])
-
-c = np.divmod(a,b)
+a = np.array([1,-2.3,-3.5,4.87])
+c = np.around(a)
 print(c)
