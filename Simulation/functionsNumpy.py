@@ -87,8 +87,20 @@ print(stir(a))
 # c = np.trunc(a)
 # print(c)
 
+# import numpy as np
+
+# a = np.array([1,-2.3,-3.5,4.87])
+# c = np.around(a)
+# print(c)
+
+# import numpy as np
+
+# a = np.array([1,-2.3,-3.5,4.87])
+# c = np.floor(a)
+# print(c)
+
 import numpy as np
 
 a = np.array([1,-2.3,-3.5,4.87])
-c = np.around(a)
+c = np.ceil(a)
 print(c)
