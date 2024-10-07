@@ -49,10 +49,28 @@ print(stir(a))
 # c = np.divide(a,b)
 # print(c)
 
+#################################################################################
+
+# import numpy as np
+
+# a = np.array([1,2,3,4])
+# b = np.array([1,2,3,4])
+
+# c = np.power(a,b)
+# print(c)
+
+# import numpy as np
+
+# a = np.array([1,2,3,4])
+# b = np.array([1,2,3,4])
+
+# c = np.mod(a,b)
+# print(c)
+
 import numpy as np
 
 a = np.array([1,2,3,4])
 b = np.array([1,2,3,4])
 
-c = np.power(a,b)
+c = np.divmod(a,b)
 print(c)
