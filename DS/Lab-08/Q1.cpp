@@ -29,7 +29,7 @@ public:
 
     void preOrderTraversal(Node *root){
         if(root == nullptr){
-            cout<<"-1"<<" ";
+            cout<<"#"<<" ";
             return;
         }
         cout << root->data << " ";
@@ -65,10 +65,11 @@ int main(){
     t1.insert("2");
     t1.insert("5");
     t1.insert("6");
+    cout << "Serialized: ";
     t1.traverse();
 
     BST t2 = t1.catchtree();
-    cout << "\nNew BST (pre-order): ";
+    cout << "\nDeserialized: ";
     t2.traverse();
     cout << endl;
 }
