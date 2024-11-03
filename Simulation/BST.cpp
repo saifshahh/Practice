@@ -82,7 +82,7 @@ class BST{
 
         Node* temp = root;
 
-        while(root != NULL){
+        while(temp != NULL){
             if(newNode->data == temp->data) return;
             else if(newNode->data < temp->data && temp->left == NULL){
                 temp->left = newNode;
