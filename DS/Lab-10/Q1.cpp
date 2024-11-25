@@ -13,7 +13,7 @@ class Heap{
         size = 0;
     }
 
-    void insert(int value){
+    void insertMax(int value){
         size++;
         int index = size;
         arr[index] = value;
@@ -29,7 +29,7 @@ class Heap{
         }
     }
 
-    void deletion(){
+    void deletion_Max(){
         if(size == 0) return;
 
         arr[1] = arr[size];
@@ -64,7 +64,7 @@ void SlidingWindow(int arr[], int k, int n){
 
     for(int i = 0; i <= n-k; i++){
         h.clear();
-        for(int j = i; j < i + k; j++) h.insert(arr[j]);
+        for(int j = i; j < i + k; j++) h.insertMax(arr[j]);
         result[i] = h.getMax();
     }
     for(int i = 0; i < n - k + 1; i++) cout << result[i] << " ";
