@@ -34,7 +34,7 @@ class BST{
             return;
         }
         if(node->keys.ID == key.ID) return;
-        if(node->keys.ID < key.ID) insert(node->right, key);
+        if(node->keys.ID < key.ID) insert(node->left, key);
         else insert(node->right,key);
     }
 
