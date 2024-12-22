@@ -44,6 +44,15 @@ public:
         }
     }
 
+    void dequeue(){
+
+        if(!head) cout<<"Queue is empty!"<<endl;
+
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
+
     // Peeks at the highest priority element
     int peek() {
         if (head != nullptr) {
