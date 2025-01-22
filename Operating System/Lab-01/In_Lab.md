@@ -5,3 +5,7 @@ apt-get is a command line interface for retrieval of packages and information ab
 
 ### yum:
 Yellowdog Updater Modified is a Package management command for RPM-based Linuxdistributions (e.g., RHEL, CentOS, Fedora).
+
+### wget:
+wget helps in retrieving data from the internet/web.
+
