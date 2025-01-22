@@ -17,3 +17,6 @@ tar is used to archive files and directories.
 
 ### rar:
 rar assists in the creation, modification and extraction of .rar files.
+
+
+## Task 2
