@@ -9,3 +9,11 @@ Yellowdog Updater Modified is a Package management command for RPM-based Linuxdi
 ### wget:
 wget helps in retrieving data from the internet/web.
 
+### gzip:
+gzip helps to compress and decompress files.
+
+### tar:
+tar is used to archive files and directories.
+
+### rar:
+rar assists in the creation, modification and extraction of .rar files.
