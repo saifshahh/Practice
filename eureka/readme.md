@@ -1,5 +1,3 @@
-# **Linux Commands & Bash Scripting Cheat Sheet**
-
 ## **1. File and Directory Commands**
 | Command | Description |
 |---------|-------------|
@@ -192,6 +190,3 @@ case $num in
 *) echo "Invalid input." ;;
 esac
 ```
-
-🚀 **This cheat sheet covers essential Linux commands and Bash scripting basics. Save this document for quick reference!** 🚀
-
