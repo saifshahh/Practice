@@ -1,5 +1,5 @@
 # Question 1
-
+'''
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -53,3 +53,4 @@ sns.boxplot(y=df_emp["Experience (Years)"])
 plt.title("Box Plot of Experience (Years)")
 plt.ylabel("Years of Experience")
 plt.show()
+'''
