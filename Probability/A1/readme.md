@@ -1,11 +1,10 @@
 # Question 1
-'''
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Constructing the Employee Performance DataFrame
 data = {
     "ID": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     "Age": [28, 35, 42, 30, 50, 41, 29, 33, 45, 39],
@@ -22,7 +21,6 @@ data = {
 
 df_emp = pd.DataFrame(data)
 
-# Exploratory Data Analysis
 def employee_eda(df):
     print("Dataset Info:")
     print(df.info())
@@ -33,10 +31,8 @@ def employee_eda(df):
     print("\nDistinct Values in Promotion Status:")
     print(df["Promotion Status"].value_counts())
     
-# Checking for missing values
 print("Missing Values:\n", df_emp.isnull().sum())
 
-# Visualization
 plt.figure(figsize=(10,5))
 sns.histplot(df_emp["Salary ($)"], bins=8, kde=True, color='blue')
 plt.title("Distribution of Salaries")
@@ -57,4 +53,3 @@ sns.boxplot(y=df_emp["Experience (Years)"])
 plt.title("Box Plot of Experience (Years)")
 plt.ylabel("Years of Experience")
 plt.show()
-'''
