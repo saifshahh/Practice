@@ -540,7 +540,7 @@ run(agent, env, start, strategy="DFS")
 ```
 
 # Genetic Algorithm:
-'''py
+```py
 import random
 
 class Environment:
@@ -598,4 +598,4 @@ env = Environment(function, bounds)
 agent = Agent(env)
 
 print(agent.act())
-'''
+```
