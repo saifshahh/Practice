@@ -538,3 +538,64 @@ run(agent, env, start, strategy="BFS")
 print("\nRunning DFS:")
 run(agent, env, start, strategy="DFS")
 ```
+
+# Genetic Algorithm:
+'''py
+import random
+
+class Environment:
+    def __init__(self, function, bounds, population_size=10, mutation_rate=0.1):
+        self.function = function
+        self.bounds = bounds
+        self.population_size = population_size
+        self.mutation_rate = mutation_rate
+
+    def initialize_population(self):
+        return [random.uniform(self.bounds[0], self.bounds[1]) for _ in range(self.population_size)]
+
+    def fitness(self, x):
+        return self.function(x)
+
+    def select_parents(self, population):
+        sorted_population = sorted(population, key=self.fitness, reverse=True)
+        return sorted_population[:2]
+
+    def crossover(self, parents):
+        parent1, parent2 = parents
+        return (parent1 + parent2) / 2  # Simple average crossover
+
+    def mutate(self, offspring):
+        if random.random() < self.mutation_rate:
+            mutation = random.uniform(-1, 1)  # Small mutation
+            offspring += mutation
+        return min(max(offspring, self.bounds[0]), self.bounds[1])  # Ensure within bounds
+
+    def evolve(self, generations=10):
+        population = self.initialize_population()
+
+        for gen in range(generations):
+            parents = self.select_parents(population)
+            offspring = self.mutate(self.crossover(parents))
+            population.append(offspring)
+            population = sorted(population, key=self.fitness, reverse=True)[:self.population_size]
+            print(f"Generation {gen+1}: Best Solution = {population[0]}, Fitness = {self.fitness(population[0])}")
+
+        return population[0]
+
+class Agent:
+    def __init__(self, environment):
+        self.environment = environment
+
+    def act(self):
+        best_solution = self.environment.evolve()
+        return f"Best solution found: x = {best_solution}, f(x) = {self.environment.fitness(best_solution)}"
+
+def function(x):
+    return -(x**2) + 10*x  # Example function to maximize
+
+bounds = (0, 10)
+env = Environment(function, bounds)
+agent = Agent(env)
+
+print(agent.act())
+'''
