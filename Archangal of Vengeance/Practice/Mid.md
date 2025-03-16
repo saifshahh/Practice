@@ -539,7 +539,7 @@ print("\nRunning DFS:")
 run(agent, env, start, strategy="DFS")
 ```
 
-# Genetic Algorithm:
+# GA:
 ```py
 import random
 
