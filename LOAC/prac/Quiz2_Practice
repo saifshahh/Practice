@@ -1,0 +1,198 @@
+INCLUDE Irvine32.inc
+TITLE REVERSE THE STRING
+.data
+	aName BYTE "Raghib Rizwan",0
+.code
+main PROC
+	mov esi, 0
+	mov ecx, LENGTHOF aName - 1
+L1:
+	movzx eax, aName[esi]
+	push eax
+	inc esi
+	loop L1
+
+	mov esi,0
+	mov ecx, LENGTHOF aName - 1
+L2:
+	pop eax
+	mov aName[esi], al
+	inc esi
+	loop L2
+
+	mov esi,0
+	mov ecx, LENGTHOF aName - 1
+
+	mov edx, OFFSET aName
+
+	call WriteString
+	exit
+main ENDP
+END main
+
+
+
+INCLUDE Irvine32.inc
+TITLE PROCEDURES
+.data
+.code
+main PROC
+	mov eax,20
+	mov ebx,10
+	call myadd
+	call WriteInt
+	exit
+main ENDP
+
+myadd PROC
+	add eax,ebx
+	ret
+myadd ENDP
+END main
+
+
+
+INCLUDE Irvine32.inc
+TITLE Read from terminal
+.data
+	qs1 BYTE "Enter your Name:",0
+	qs2 BYTE "Enter the number:",0
+	ans1 BYTE "Name:",0
+	ans2 BYTE "Number:",0
+	reading1 BYTE 80 DUP(?)
+	reading2 BYTE ?
+
+.code
+main PROC
+	mov edx,OFFSET qs1
+	call WriteString
+	mov edx,OFFSET reading1
+	mov ecx,LENGTHOF reading1 - 1
+	call ReadString
+	mov eax,edx
+	mov edx,OFFSET ans1
+	call WriteString
+	mov edx,eax
+	call WriteString
+	
+	call crlf
+
+	mov edx,OFFSET qs2
+	call WriteString
+	mov eax,OFFSET reading2
+	call ReadInt
+
+	mov edx,OFFSET ans2
+	call WriteString
+	call WriteInt
+main ENDP
+END main
+
+
+
+INCLUDE Irvine32.inc
+TITLE Multiple Procedures
+.data
+	a1 BYTE "ADD1",0
+	a2 BYTE "ADD2",0
+	a3 BYTE "ADD3",0
+.code
+main PROC
+	mov eax,5
+	mov ebx,5
+	call add1
+	call WriteInt
+	exit
+main ENDP
+
+add1 PROC
+	add eax,ebx
+	call add2
+	mov edx,OFFSET a1
+	call WriteString
+	call crlf
+	ret
+add1 ENDP
+
+add2 PROC
+	add eax,ebx
+	call add3
+	mov edx,OFFSET a2
+	call WriteString
+	call crlf
+	ret
+add2 ENDP
+
+add3 PROC
+	add eax,ebx
+	mov edx,OFFSET a3
+	call WriteString
+	call crlf
+	ret
+add3 ENDP
+END main
+
+
+
+INCLUDE Irvine32.inc
+TITLE Add all 3 Arrays
+.data
+	arr1 DWORD 1,2,3,4,5
+	arr2 DWORD 10,20,30,40,50
+	arr3 DWORD 100,200,300,400,500
+	res1 DWORD 5 DUP(0)
+.code
+main PROC
+	mov eax,0
+	mov ecx,5
+	mov esi,0
+L1:
+	add eax,arr1[esi]
+	add eax,arr2[esi]
+	add eax,arr3[esi]
+	mov res1[esi],eax
+	add esi,4
+	mov eax,0
+	loop L1
+
+	mov ecx,5
+	mov esi,0
+L2:
+	mov eax,res1[esi]
+	add esi,4
+	call WriteInt
+	call crlf
+	loop L2
+	exit
+main ENDP
+END main
+
+
+
+INCLUDE Irvine32.inc
+TITLE USES Operator
+.data
+	
+.code
+main PROC
+	mov ecx,10
+	mov edx,5
+	call sum
+	mov eax,ecx
+	call WriteInt
+	mov eax,edx
+	call WriteInt
+	exit
+main ENDP
+
+sum PROC USES edx ecx ; USES push the register values in stack and pop it when we call return command
+	mov ecx,20
+	mov eax,ecx
+	call WriteInt
+	mov edx,40
+	mov eax,edx
+	call WriteInt
+	ret
+sum ENDP
+
+END main
